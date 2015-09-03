@@ -184,6 +184,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    wit (1.0.6)
 
 PLATFORMS
   ruby
@@ -212,6 +213,7 @@ DEPENDENCIES
   spring-commands-rspec
   unicorn
   web-console
+  wit
 
 BUNDLED WITH
    1.10.6
