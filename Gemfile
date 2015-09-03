@@ -13,7 +13,6 @@ gem 'active_hash'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'mandrill-api'
 gem 'rails_12factor'
-gem 'wit'
 
 group :development do
   gem "spring"
