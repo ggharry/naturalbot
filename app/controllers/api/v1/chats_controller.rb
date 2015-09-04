@@ -30,9 +30,12 @@ module Api
       def get_intent(message, access_token)
         require 'open-uri'
 
-        url = "https://api.wit.ai/message?access_token=#{access_token}&q=#{message}"
+        url = "https://api.wit.ai/message"
+        query = "?"
+        query += "access_token=#{access_token}"
+        query += "&q=#{message}"
 
-        url_data = open(url).read
+        url_data = open(url+query).read
       end
     end
   end
