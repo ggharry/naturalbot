@@ -11,13 +11,17 @@
     <div class="col-xs-4">
       <h2>Intents</h2>
 
-      <div ng-repeat="intent in intents track by $index" ng-click="getExpressionofAnIntent(intent.id)">
+      <div ng-repeat="intent in intents track by $index" ng-click="getExpressionsOfAnIntent(intent.id); getResponsesOfAnIntent(intent.name)">
         <a>{{ intent.name }}</a>
       </div>
     </div>
 
     <div class="col-xs-4">
-      <h2>Intents</h2>
+      <h2>Responses</h2>
+
+      <div ng-repeat="response in responses track by $index">
+        {{ response.response }}
+      </div>
     </div>
   </div>
 </div>

@@ -1,9 +1,18 @@
 app.controller('DashboardCtrl', ['$scope', '$http', 'URL', function($scope, $http, URL){
 
-  $scope.getExpressionofAnIntent = function(intent_wit_id){
+  $scope.getExpressionsOfAnIntent = function(intent_wit_id){
     $http.get(URL + '/intents/' + intent_wit_id).then(function(res){
       console.log(res);
       $scope.expressions = res.data.expressions;
+    }).catch(function(res){
+      console.log(res);
+    });
+  };
+
+  $scope.getResponsesOfAnIntent = function(intent_name){
+    $http.get(URL + '/intents/' + intent_name + '/responses').then(function(res){
+      console.log(res);
+      $scope.responses = res.data;
     }).catch(function(res){
       console.log(res);
     });
