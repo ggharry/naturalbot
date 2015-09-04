@@ -2,7 +2,7 @@
 
 var app = angular.module('natural-bot', ['ui.router', 'ui.bootstrap']);
 
-app.constant('URL', "<%= ENV['URL'] %>" || 'http://localhost:3000/api/v1');
+app.constant('URL', "<%= ENV['URL'] %>" + '/api/v1');
 
 app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
