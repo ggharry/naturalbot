@@ -15,6 +15,8 @@ module Api
 
         response = Response.where(intent: intent).first.response
 
+        Log.create(message: user_query, intent: intent, confidence: confidence, response: response)
+
         render json: {
           user_query: user_query,
           intent: intent,
