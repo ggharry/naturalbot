@@ -1,0 +1,14 @@
+'use strict';
+
+var app = angular.module('natural-bot', ['ui.router']);
+
+app.config(function($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise("/");
+
+  $stateProvider
+    .state('home', {
+      url: "/",
+      templateUrl: "<%= asset_path('static_pages/index.html') %>",
+      controller: 'StaticPagesCtrl'
+    });
+});

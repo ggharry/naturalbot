@@ -13,11 +13,10 @@ gem 'active_hash'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'mandrill-api'
 gem 'rails_12factor'
-gem 'uglifier'
+gem 'uglifier', '>= 1.3.0'
+gem 'bower'
 
 group :development do
-  gem "spring"
-  gem "spring-commands-rspec"
   gem "web-console"
   gem "better_errors"
   gem "binding_of_caller"
