@@ -1,6 +1,8 @@
 'use strict';
 
-var app = angular.module('natural-bot', ['ui.router']);
+var app = angular.module('natural-bot', ['ui.router', 'ui.bootstrap']);
+
+app.constant('URL', "<%= ENV['URL'] %>" || 'http://localhost:3000/api/v1');
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
@@ -10,5 +12,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: "/",
       templateUrl: "<%= asset_path('static_pages/index.html') %>",
       controller: 'StaticPagesCtrl'
+    })
+    .state('dashboard', {
+      url: "/dashboard",
+      templateUrl: "<%= asset_path('static_pages/dashboard.html') %>",
+      controller: 'DashboardCtrl'
     });
 });

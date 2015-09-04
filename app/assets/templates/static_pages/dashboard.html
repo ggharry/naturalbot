@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <h2>Expressions</h2>
+
+      <div ng-repeat="expression in expressions track by $index">
+        {{ expression.body }}
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <h2>Intents</h2>
+
+      <div ng-repeat="intent in intents track by $index" ng-click="getExpressionofAnIntent(intent.id)">
+        <a>{{ intent.name }}</a>
+      </div>
+    </div>
+
+    <div class="col-xs-4">
+      <h2>Intents</h2>
+    </div>
+  </div>
+</div>
