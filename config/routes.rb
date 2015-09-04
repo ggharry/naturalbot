@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  get 'ask' => 'chats#ask'
+  namespace :api do
+    namespace :v1 do
+      get 'ask' => 'chats#ask'
+    end
+  end
 end
