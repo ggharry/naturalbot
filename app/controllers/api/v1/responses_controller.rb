@@ -22,6 +22,18 @@ module Api
         end
       end
 
+      def destroy
+        response = Response.find(params[:id])
+
+        if response
+          if response.destroy
+            render json: { message: "Response deleted" }, status: :no_content
+          else
+          end
+        else
+        end
+      end
+
       private
 
         def response_params

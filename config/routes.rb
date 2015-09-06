@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       
       get 'intents/:intent_name/responses' => 'responses#index'
       post 'intents/:intent_name/responses' => 'responses#create'
+      delete 'responses/:id' => 'responses#destroy'
     end
   end
 end

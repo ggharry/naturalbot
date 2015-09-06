@@ -13,7 +13,7 @@ module Api
         intent = outcomes["intent"]
         confidence = outcomes["confidence"]
 
-        response = Response.where(intent: intent).first.response
+        response = Response.where(intent: intent).sample.response
 
         Log.create(message: user_query, intent: intent, confidence: confidence, response: response)
 
