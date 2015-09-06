@@ -35,7 +35,8 @@ app.controller('DashboardCtrl', ['$scope', '$http', 'URL', function($scope, $htt
 
   $scope.submitMessage = function(){
     $http.get(URL + '/ask?message=' + $scope.message).then(function(res){
-      $scope.response = res.data
+      $scope.response = res.data;
+      $scope.message = null;
     }).catch(function(res){
       console.log(res.data);
     });
@@ -51,6 +52,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', 'URL', function($scope, $htt
 
     $http.post(url, data).then(function(res){
       $scope.responses.push(res.data);
+      $scope.newResponse = null;
       console.log(res.data);
     }).catch(function(res){
       console.log(res.data);
@@ -62,6 +64,7 @@ app.controller('DashboardCtrl', ['$scope', '$http', 'URL', function($scope, $htt
     var url = URL + '/responses/' + response_id;
 
     $http.delete(url).then(function(res){
+      $scope.responses.splice(responseIndex, 1);
       console.log(res);
     }).catch(function(res){
       console.log(res);
