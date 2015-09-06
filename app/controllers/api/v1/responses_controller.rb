@@ -8,6 +8,25 @@ module Api
 
         render json: responses
       end
+
+      def create
+        intent_name = params[:intent_name]
+
+        response = Response.new(response_params)
+        response.intent = intent_name
+
+        if response.save
+          render json: response
+        else
+
+        end
+      end
+
+      private
+
+        def response_params
+          params.require(:response).permit(:response)
+        end
     end
   end
 end

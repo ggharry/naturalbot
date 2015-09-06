@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       end
       
       get 'intents/:intent_name/responses' => 'responses#index'
+      post 'intents/:intent_name/responses' => 'responses#create'
     end
   end
 end
