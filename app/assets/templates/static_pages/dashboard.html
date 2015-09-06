@@ -1,27 +1,56 @@
 <div class="container">
   <div class="row">
+    <div class="col-xs-12">
+      <form ng-submit="submitMessage()">
+        <input type"text" ng-model="message">
+        <input type="submit">
+      </form>
+
+      <div>
+        Intent: {{ response.intent }}
+      </div>
+      <div>
+        Confidence: {{ response.confidence }}
+      </div>
+      <div>
+        Response: {{ response.response }}
+      </div>
+    </div>
+
     <div class="col-xs-4">
       <h2>Expressions</h2>
 
-      <div ng-repeat="expression in expressions track by $index">
-        {{ expression.body }}
-      </div>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="expression in expressions track by $index">
+          {{ expression.body }}
+        </li>
+      </ul>
     </div>
 
     <div class="col-xs-4">
       <h2>Intents</h2>
 
-      <div ng-repeat="intent in intents track by $index" ng-click="getExpressionsOfAnIntent(intent.id); getResponsesOfAnIntent(intent.name)">
-        <a>{{ intent.name }}</a>
+      <div class="list-group">
+        <button type="button" class="list-group-item" ng-repeat="intent in intents track by $index" ng-click="getCurrentIntentInfo(intent)">
+          {{ intent.name }}
+        </button>
       </div>
+
     </div>
 
     <div class="col-xs-4">
       <h2>Responses</h2>
 
-      <div ng-repeat="response in responses track by $index">
-        {{ response.response }}
-      </div>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="response in responses track by $index" ng-click="deleteResponse($index)">
+          {{ response.response }}
+        </li>
+      </ul>
+
+      <form ng-submit="submitResponse(currentIntent)">
+        <input type"text" ng-model="newResponse">
+        <input type="submit">
+      </form>
     </div>
   </div>
 </div>

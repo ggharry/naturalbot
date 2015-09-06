@@ -15,6 +15,7 @@ gem 'mandrill-api'
 gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
 gem 'bower'
+gem 'sass-rails'
 
 group :development do
   gem "web-console"
